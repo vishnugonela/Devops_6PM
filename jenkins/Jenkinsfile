@@ -24,9 +24,3 @@ pipeline{
 
 }
 
-		}
-
-		stage('deploy'){}
-}
-
-}
