@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Hello World From GIT!"
+echo "Hello From GIT!"
