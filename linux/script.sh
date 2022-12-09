@@ -1,3 +1,4 @@
 #!/bin/bash
 
-echo "Hello From GITHUB Ashutosh!"
+echo "Hello From GIT by Ashutosh!"
+
