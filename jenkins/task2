@@ -1,0 +1,11 @@
+pipeline {
+  agent any
+  stages {
+    stage('Backup the Jenkins Folder') {
+      steps {
+        sh '`tar -cvpf srinivas_jenkins.tar /var/lib/jenkins`'
+
+      }
+    }
+  }
+}
