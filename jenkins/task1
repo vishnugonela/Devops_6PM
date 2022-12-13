@@ -1,0 +1,11 @@
+pipeline {
+  agent any
+  stages {
+    stage('System Information') {
+      steps {
+        sh 'Name: echo -e "Hostname:\t\t\t"`hostname'
+        '
+      }
+    }
+  }
+}
