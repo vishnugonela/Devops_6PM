@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Backup the Jenkins Folder') {
       steps {
-        sh '`tar -cvpf /var/log/srinivas_jenkins.tar /var/lib/jenkins`'
+        sh '`tar -cvpf /srinivas_jenkins.tar /var/lib/jenkins`'
 
       }
     }
