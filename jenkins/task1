@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('System Memory') {
       steps {
-        sh 'echo -e "Memory:\t\t"`free | awk '/Mem/{printf("%.2f"), $2/1024/1024}'`'
+        sh '`free | awk '/Mem/{printf("%.2f"), $2/1024/1024}'`'
       }
     }
     }
