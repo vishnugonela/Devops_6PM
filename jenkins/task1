@@ -9,7 +9,7 @@ pipeline {
     }
     stage('System Memory') {
       steps {
-        sh 'Memory: echo -e "Memory:\t\t"`free | awk '/Mem/{printf("%.2f"), $2/1024/1024}'`'
+        sh 'free -m'
       }
     }
   }
