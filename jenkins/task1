@@ -3,13 +3,23 @@ pipeline {
   stages {
     stage('System Name') {
       steps {
-        sh 'Name: echo -e "Hostname:\t\t\t"`hostname`'
+        sh 'echo -e "Hostname:\t\t\t"`hostname`'
 
       }
     }
     stage('System Memory') {
       steps {
         sh 'free -m'
+      }
+    }
+    stage('System Disk Info') {
+      steps {
+        sh 'lsblk'
+      }
+    }
+    stage('System IP address') {
+      steps {
+        sh 'hostname -I'
       }
     }
   }
