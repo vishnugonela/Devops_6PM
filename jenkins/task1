@@ -1,8 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('System Memory') {
+    stage('System Name') {
       steps {
+<<<<<<< HEAD
         sh '`free | awk ' / Mem / {
           printf("%.2f"),
           $2 / 1024 / 1024
@@ -13,3 +14,26 @@ pipeline {
   }
 
 }
+=======
+        sh 'echo -e "Hostname:\t\t\t"`hostname`'
+
+      }
+    }
+    stage('System Memory') {
+      steps {
+        sh 'free -m'
+      }
+    }
+    stage('System Disk Info') {
+      steps {
+        sh 'lsblk'
+      }
+    }
+    stage('System IP address') {
+      steps {
+        sh 'hostname -I'
+      }
+    }
+  }
+}
+>>>>>>> 8f179eed86bcd108876362c5eb051a18919f34dc
