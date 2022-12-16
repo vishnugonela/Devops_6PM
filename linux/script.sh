@@ -1,3 +1,6 @@
 #!/bin/bash
 
-echo "Hello From GIT by Ashutosh!"
+for i in {1..10}
+do
+  echo "Hello From GITHUB by Ashutosh executing on 'hostname'"
+done

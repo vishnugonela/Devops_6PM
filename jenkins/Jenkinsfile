@@ -1,0 +1,15 @@
+pipeline{
+        agent any
+        stages{
+                stage('stage1'){
+                        steps{
+                         sh 'echo "Build Successful from GITHUB" '
+                        }
+                }
+                stage('stage2'){
+                        steps{
+                         sh 'echo "Build running on `hostname`" '
+                        }
+                }
+}
+}
