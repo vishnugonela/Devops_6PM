@@ -1,3 +1,4 @@
 #!/bin/bash
-echo "HIi"
-echo "Hello world  by shabbir"
+echo "HI linux"
+echo "Helloworld  by shabbir"
+
