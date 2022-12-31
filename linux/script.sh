@@ -1,6 +1,6 @@
 #!/bin/bash
 <<<<<<< HEAD
-echo "Hello from Git by vishnu"
+echo "Hello from Git by ammena"
 =======
 echo "Hello from GitHUB by ameena"
 
