@@ -17,5 +17,13 @@ pipeline{
                             '''
                         }
                 }
+		stage('container_deployment'){
+			steps{
+			 sh '''
+				echo "Creating Container ...."
+				docker container run -d --name jenkins1 vishnugonela/image_pipeline1:latest bash
+			  '''
+			}
+		}
 }
 }
