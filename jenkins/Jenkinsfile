@@ -1,6 +1,14 @@
 pipeline{
         agent any
         stages{
+		stage('clean_up'){
+			steps{
+			 sh '''
+				docker container rm -f jenkins1
+				docker image rm -f image_pipeline1:latest vishnugonela/image_pipeline1:latest
+			  '''
+			}
+		}
                 stage('image_build'){
                         steps{
                          sh '''
