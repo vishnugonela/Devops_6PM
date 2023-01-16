@@ -1,21 +1,39 @@
+
 pipeline{
         agent any
         stages{
+		stage('clean_up'){
+			steps{
+			 sh '''
+				docker container rm -f jenkins1
+				docker image rm -f image_pipeline1:latest ashutoshpati/image_pipeline1:latest
+			  '''
+			}
+		}
                 stage('image_build'){
                         steps{
                          sh '''
-                               echo "Building Docker image"
-                               docker image build -t image_pipeline1 ${WORKSPACE}/docker
-                            '''
+				echo "Building Docker image"
+			        docker image build -t image_pipeline1 ${WORKSPACE}/docker 
+			 '''
                         }
                 }
                 stage('image_tagging'){
                         steps{
                          sh '''
-                               echo "Tagging the image....."
-                               docker image tag image_pipeline1:latest ashutoshpati/image_pipeline1:latest
+				echo "Tagging the image...."
+				docker image tag image_pipeline1:latest ashutoshpati/image_pipeline1:latest
                             '''
                         }
                 }
+		stage('container_deployment'){
+			steps{
+			 sh '''
+				echo "Creating Container ...."
+				docker container run -d --name jenkins1 ashutoshpati/image_pipeline1:latest bash
+			  '''
+			}
+		}
 }
 }
+
