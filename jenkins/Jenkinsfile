@@ -5,7 +5,7 @@ pipeline{
                         steps{
                          sh '''
                                echo "Building Docker image"
-                               docker image build -t image_pipeline ${WORKSPACE}/docker
+                               docker image build -t image_pipeline docker/Dockerfile
                             '''
                         }
                 }
