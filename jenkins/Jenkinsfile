@@ -5,7 +5,7 @@ pipeline{
                         steps{
                          sh '''
                                echo "Building Docker image"
-                               docker image build -t image_pipeline /var/lib/jenkins/workspace/Docker_Pipeline/docker/Dockerfile
+                               docker image build -t image_pipeline1 ${WORKSPACE}/docker
                             '''
                         }
                 }
@@ -13,7 +13,7 @@ pipeline{
                         steps{
                          sh '''
                                echo "Tagging the image....."
-                               docker image tag image_pipeline:latest ashutoshpati/image_pipeline:latest
+                               docker image tag image_pipeline1:latest ashutoshpati/image_pipeline1:latest
                             '''
                         }
                 }
