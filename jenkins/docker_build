@@ -13,7 +13,7 @@ pipeline{
             steps{
                 sh '''
                     echo "taggig image"
-                    docker image tag image1:latest vishnugonela/image1:latest
+                    docker image tag image1:latest ranjana000/image1:latest
                     '''
             }
         }
@@ -21,7 +21,7 @@ pipeline{
             steps{
                 sh '''
                     docker login -u ranjana00 -p shrinidhi@1
-                    docker image push vishnugonela/image1:latest
+                    docker image push ranjana000/image1:latest
                     '''
             }
         }
@@ -29,7 +29,7 @@ pipeline{
             steps{
                 sh '''
                     echo "creating container..."
-                    docker container run -d --name c1 vishnugonela/image1:latest bash
+                    docker container run -d --name c1 ranjana000/image1:latest bash
                     '''
             }
         }
