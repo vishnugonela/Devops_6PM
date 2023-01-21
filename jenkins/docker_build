@@ -1,20 +1,42 @@
+ 
 pipeline{
     agent any 
     stages {
         stage ('image_build') {
-        steps { sh ''' docker image build -t image1 ${WORKSPACE}/docker '''
+        steps {
+           sh '''
+                echo "image buildng"
+                docker image build -t image1 ${WORKSPACE}/docker
+              '''
         }
 
         
     }
     stage ('image_tagging') {
-        steps { sh ''' docker image tag image1:latest  ranjana/image1:latest ''' }
+        steps {
+           sh '''
+                 echo "image tagging" 
+                 docker image tag image1:latest  vishnugonela/image1:latest
+              '''
+       }
     }
     
     stage ('image_push') {
-        steps { sh ''' docker image push ranjana/image1:latest ''' }
+        steps { 
+        sh '''
+                   echo "image pushing"
+                   docker image push vishnugonela/image1:latest
+           '''
+     }
     }
     
     stage ('deploy') { 
-        steps { sh ''' docker container run -d --name c1 ranjana/image1:latest ''' }
+        steps {
+           sh '''
+                   echo "creating container"
+                   docker container run -d --name c1 vishnugonela/image1:latest
+              '''
+ }
+}
+}
 }
