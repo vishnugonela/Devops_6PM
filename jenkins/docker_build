@@ -20,7 +20,7 @@ pipeline{
         stage('image_push'){
             steps{
                 sh '''
-                    docker login -u ranjana00 -p shrinidhi@1
+                    docker login -u ranjana000 -p shrinidhi@1
                     docker image push ranjana000/image1:latest
                     '''
             }
