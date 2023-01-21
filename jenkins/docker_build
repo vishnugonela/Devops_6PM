@@ -29,7 +29,7 @@ pipeline{
             steps{
                 sh '''
                     echo "creating container..."
-                    docker container run -d --name c1 ranjana000/image1:latest bash
+                    docker container run -d --name c9 ranjana000/image1:latest bash
                     '''
             }
         }
