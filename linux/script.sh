@@ -2,5 +2,5 @@
 
 for i in {1..10}
 do
-  echo "Hello from GITHUB by Vishnu exeuting on `hostname`"
+  echo "Hello from GITHUB by Vishnu "
 done
